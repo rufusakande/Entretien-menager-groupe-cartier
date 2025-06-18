@@ -1,14 +1,84 @@
+/* Import du nouveau système de couleurs */
+@import './colors.css';
+
+/* Styles de base pour maintenir la compatibilité */
 :root {
-  --primary-color: #3e8987;
-  --secondary-color: #ffffff;
-  --link-hover-color: #2c6361;
-  --button-color: #ffffff;
-  --button-bg: #3e8987;
-  --button-hover-bg: #2c6361;
-  --text-dark: #333333;
-  --text-light: #666666;
-  --border-color: #e5e5e5;
-  --shadow-light: 0 2px 10px rgba(0,0,0,0.1);
-  --shadow-medium: 0 4px 20px rgba(0,0,0,0.15);
-  --transition-smooth: all 0.3s ease;
+  /* Anciennes variables maintenues pour compatibilité */
+  --primary-color: var(--primary-color);
+  --secondary-color: var(--text-white);
+  --link-hover-color: var(--primary-dark);
+  --button-color: var(--button-text);
+  --button-bg: var(--button-bg);
+  --button-hover-bg: var(--button-hover-bg);
+  --text-dark: var(--text-primary);
+  --text-light: var(--text-light);
+  --border-color: var(--border-light);
+  --shadow-light: var(--shadow-light);
+  --shadow-medium: var(--shadow-medium);
+  --transition-smooth: var(--transition-smooth);
+}
+
+/* Styles globaux améliorés */
+body {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
+/* Amélioration des boutons avec la nouvelle palette */
+.btn {
+  border-radius: var(--radius-md);
+  font-weight: var(--font-semibold);
+  transition: var(--transition-smooth);
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border-color: var(--button-bg);
+}
+
+.btn-primary:hover {
+  background: var(--button-hover-bg);
+  border-color: var(--button-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+  background: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  border-color: var(--button-secondary-border);
+}
+
+.btn-secondary:hover {
+  background: var(--button-secondary-hover-bg);
+  color: var(--button-secondary-hover-text);
+  border-color: var(--button-secondary-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Cartes avec la nouvelle palette */
+.card {
+  background: var(--background-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-light);
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+/* Liens avec la nouvelle palette */
+a {
+  color: var(--link-color);
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--link-hover-color);
 }

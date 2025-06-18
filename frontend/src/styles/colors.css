@@ -1,0 +1,127 @@
+:root {
+  /* Couleurs principales */
+  --primary-color: #3ea984;           /* Vert frais principal */
+  --primary-light: #6bc4a6;           /* Vert clair pour les survols */
+  --primary-dark: #318c6d;            /* Vert foncé pour les états actifs */
+  
+  --secondary-color: #00587a;         /* Bleu foncé pour la confiance */
+  --secondary-light: #2980b9;         /* Bleu moyen */
+  --secondary-dark: #003f5c;          /* Bleu très foncé */
+  
+  --accent-color: #00bcd4;            /* Cyan pour l'énergie */
+  --accent-light: #4dd0e1;           /* Cyan clair */
+  --accent-dark: #0097a7;            /* Cyan foncé */
+  
+  /* Couleurs de fond - dominance du blanc teinté */
+  --background-primary: #fefffe;      /* Blanc très légèrement teinté de vert */
+  --background-secondary: #f8fffe;    /* Blanc avec une pointe de vert */
+  --background-tertiary: #f3fcfa;     /* Blanc avec plus de vert visible */
+  --background-light: #f8f9fa;        /* Fond clair neutre */
+  --background-card: #fdfefd;         /* Fond pour les cartes */
+  
+  /* Couleurs de texte */
+  --text-primary: #1d1d1d;           /* Texte principal très foncé */
+  --text-secondary: #2d2d2d;         /* Texte secondaire */
+  --text-light: #666666;             /* Texte clair */
+  --text-muted: #8a8a8a;             /* Texte atténué */
+  --text-white: #ffffff;             /* Texte blanc */
+  
+  /* Couleurs des boutons */
+  --button-bg: var(--primary-color);
+  --button-hover-bg: var(--primary-dark);
+  --button-text: var(--text-white);
+  --button-secondary-bg: transparent;
+  --button-secondary-border: var(--primary-color);
+  --button-secondary-text: var(--primary-color);
+  --button-secondary-hover-bg: var(--primary-color);
+  --button-secondary-hover-text: var(--text-white);
+  
+  /* Couleurs des liens */
+  --link-color: var(--secondary-color);
+  --link-hover-color: var(--secondary-dark);
+  
+  /* Couleurs des bordures */
+  --border-light: #e8f4f1;           /* Bordure très claire avec teinte verte */
+  --border-medium: #d1e7e0;          /* Bordure moyenne avec vert */
+  --border-dark: #b8d4c7;            /* Bordure plus visible */
+  --border-neutral: #e5e5e5;         /* Bordure neutre */
+  
+  /* Couleurs d'état */
+  --success-color: #28a745;
+  --success-light: #d4edda;
+  --warning-color: #ffc107;
+  --warning-light: #fff3cd;
+  --error-color: #dc3545;
+  --error-light: #f8d7da;
+  --info-color: var(--accent-color);
+  --info-light: #d1ecf1;
+  
+  /* Ombres */
+  --shadow-light: 0 2px 10px rgba(62, 169, 132, 0.08);
+  --shadow-medium: 0 4px 20px rgba(62, 169, 132, 0.12);
+  --shadow-heavy: 0 8px 30px rgba(62, 169, 132, 0.16);
+  
+  /* Transitions */
+  --transition-fast: all 0.2s ease;
+  --transition-smooth: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+  
+  /* Espacements */
+  --spacing-xs: 0.25rem;    /* 4px */
+  --spacing-sm: 0.5rem;     /* 8px */
+  --spacing-md: 1rem;       /* 16px */
+  --spacing-lg: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;       /* 32px */
+  --spacing-2xl: 3rem;      /* 48px */
+  --spacing-3xl: 4rem;      /* 64px */
+  
+  /* Rayons de bordure */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 50%;
+  
+  /* Tailles de police */
+  --font-xs: 0.75rem;       /* 12px */
+  --font-sm: 0.875rem;      /* 14px */
+  --font-base: 1rem;        /* 16px */
+  --font-lg: 1.125rem;      /* 18px */
+  --font-xl: 1.25rem;       /* 20px */
+  --font-2xl: 1.5rem;       /* 24px */
+  --font-3xl: 1.875rem;     /* 30px */
+  --font-4xl: 2.25rem;      /* 36px */
+  --font-5xl: 3rem;         /* 48px */
+  
+  /* Poids de police */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+}
+
+/* Mode sombre (optionnel pour le futur) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-primary: #0f1419;
+    --background-secondary: #1a1f2e;
+    --background-tertiary: #252a3a;
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-light: #b0b0b0;
+    --border-light: #2a2f3f;
+    --border-medium: #3a3f4f;
+    --border-dark: #4a4f5f;
+  }
+}
+
+/* Variables de compatibilité avec l'ancien système */
+:root {
+  --secondary-color: var(--text-white);
+  --text-dark: var(--text-primary);
+  --border-color: var(--border-light);
+  --transition-smooth: var(--transition-smooth);
+}
