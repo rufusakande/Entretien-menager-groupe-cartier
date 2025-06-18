@@ -1,0 +1,396 @@
+@import '../../styles/theme.css';
+
+#ContactSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, 
+    var(--secondary-color) 0%, 
+    rgba(62, 137, 135, 0.05) 25%, 
+    var(--secondary-color) 50%, 
+    rgba(62, 137, 135, 0.08) 75%, 
+    var(--secondary-color) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+#ContactSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at top right, rgba(62, 137, 135, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#ContactSection .container {
+  position: relative;
+  z-index: 2;
+}
+
+#ContactSection .contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: var(--transition-smooth);
+}
+
+#ContactSection.visible .contact-content {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+#ContactSection .contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#ContactSection .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+}
+
+#ContactSection .contact-info {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+#ContactSection .phone-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgb(36, 131, 99);
+  padding: 12px 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition-smooth);
+}
+
+#ContactSection .phone-info:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+#ContactSection .contact-form-container {
+  background: var(--secondary-color);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#ContactSection .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#ContactSection .form-group {
+  position: relative;
+}
+
+#ContactSection .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#ContactSection .input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#ContactSection .input-icon {
+  position: absolute;
+  left: 15px;
+  color: #9ca3af;
+  z-index: 2;
+  transition: var(--transition-smooth);
+}
+
+#ContactSection .input-wrapper input,
+#ContactSection .input-wrapper textarea {
+  width: 100%;
+  padding: 15px 15px 15px 50px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #f9fafb;
+  transition: var(--transition-smooth);
+  resize: none;
+}
+
+#ContactSection .input-wrapper input:focus,
+#ContactSection .input-wrapper textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(62, 137, 135, 0.1);
+}
+
+#ContactSection .input-wrapper input:focus + .input-icon,
+#ContactSection .input-wrapper textarea:focus + .input-icon {
+  color: var(--primary-color);
+}
+
+#ContactSection .input-wrapper.textarea-wrapper {
+  align-items: flex-start;
+}
+
+#ContactSection .input-wrapper.textarea-wrapper .input-icon {
+  top: 15px;
+}
+
+#ContactSection .input-wrapper textarea {
+  min-height: 100px;
+  max-height: 200px;
+  line-height: 1.5;
+}
+
+#ContactSection .input-wrapper input::placeholder,
+#ContactSection .input-wrapper textarea::placeholder {
+  color: #9ca3af;
+  font-size: 15px;
+}
+
+#ContactSection .submit-btn {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+#ContactSection .submit-btn:hover:not(.submitting) {
+  background: var(--link-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(62, 137, 135, 0.3);
+}
+
+#ContactSection .submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(62, 137, 135, 0.3);
+}
+
+#ContactSection .submit-btn.submitting {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+#ContactSection .submit-btn.success {
+  background: #10b981;
+  animation: pulse 0.6s ease-in-out;
+}
+
+#ContactSection .spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+#ContactSection .success-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#ContactSection .success-message {
+  background: #dcfce7;
+  color: #166534;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #bbf7d0;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 15px;
+  animation: slideInDown 0.5s ease-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #ContactSection {
+    padding: 60px 0;
+  }
+
+  #ContactSection .section-title {
+    font-size: 1.8rem;
+  }
+
+  #ContactSection .contact-form-container {
+    padding: 30px 25px;
+    border-radius: 16px;
+  }
+
+  #ContactSection .phone-info {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #ContactSection {
+    padding: 40px 0;
+  }
+
+  #ContactSection .section-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  #ContactSection .contact-form-container {
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+
+  #ContactSection .input-wrapper input,
+  #ContactSection .input-wrapper textarea {
+    padding: 12px 12px 12px 45px;
+    font-size: 15px;
+  }
+
+  #ContactSection .input-icon {
+    left: 12px;
+  }
+
+  #ContactSection .submit-btn {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+
+  #ContactSection .phone-info {
+    font-size: 0.95rem;
+    padding: 8px 14px;
+  }
+}
+
+/* Montre connectée et très petits écrans */
+@media (max-width: 320px) {
+  #ContactSection {
+    padding: 30px 0;
+  }
+
+  #ContactSection .section-title {
+    font-size: 1.4rem;
+  }
+
+  #ContactSection .contact-form-container {
+    padding: 20px 15px;
+    border-radius: 10px;
+  }
+
+  #ContactSection .contact-form {
+    gap: 15px;
+  }
+
+  #ContactSection .input-wrapper input,
+  #ContactSection .input-wrapper textarea {
+    padding: 10px 10px 10px 40px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  #ContactSection .input-icon {
+    left: 10px;
+  }
+
+  #ContactSection .submit-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  #ContactSection .phone-info {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+
+  #ContactSection .input-wrapper textarea {
+    min-height: 80px;
+  }
+}
+
+/* Animations d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  #ContactSection .contact-content {
+    animation: none;
+    transition: none;
+  }
+
+  #ContactSection .submit-btn {
+    transition: none;
+  }
+
+  #ContactSection .spinner {
+    animation: none;
+  }
+
+  #ContactSection .success-message {
+    animation: none;
+  }
+}
+
+/* Amélioration du contraste pour l'accessibilité */
+@media (prefers-contrast: high) {
+  #ContactSection .input-wrapper input,
+  #ContactSection .input-wrapper textarea {
+    border-color: #374151;
+  }
+
+  #ContactSection .input-wrapper input:focus,
+  #ContactSection .input-wrapper textarea:focus {
+    border-color: var(--text-dark);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+  }
+}

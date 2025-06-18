@@ -1,0 +1,14 @@
+:root {
+  --primary-color: #3e8987;
+  --secondary-color: #ffffff;
+  --link-hover-color: #2c6361;
+  --button-color: #ffffff;
+  --button-bg: #3e8987;
+  --button-hover-bg: #2c6361;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --border-color: #e5e5e5;
+  --shadow-light: 0 2px 10px rgba(0,0,0,0.1);
+  --shadow-medium: 0 4px 20px rgba(0,0,0,0.15);
+  --transition-smooth: all 0.3s ease;
+}

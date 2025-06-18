@@ -1,0 +1,781 @@
+@import '../../styles/theme.css';
+
+#FranchiseInfos {
+  background: linear-gradient(135deg, #f8fffe 0%, #e8f5f4 100%);
+  padding: 80px 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+#FranchiseInfos.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Section */
+#FranchiseInfos .franchise-hero {
+  margin-bottom: 80px;
+}
+
+#FranchiseInfos .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  min-height: 600px;
+}
+
+#FranchiseInfos .hero-text {
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+#FranchiseInfos .hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 24px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--link-hover-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+#FranchiseInfos .hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+#FranchiseInfos .hero-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+#FranchiseInfos .feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(62, 137, 135, 0.1);
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+}
+
+#FranchiseInfos .feature-item:hover {
+  background: rgba(62, 137, 135, 0.15);
+  transform: translateX(5px);
+}
+
+#FranchiseInfos .feature-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+#FranchiseInfos .feature-item span {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+#FranchiseInfos .hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#FranchiseInfos .contact-info {
+  display: flex;
+  gap: 32px;
+}
+
+#FranchiseInfos .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#FranchiseInfos .contact-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-color);
+}
+
+#FranchiseInfos .contact-item span {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* Hero Image */
+#FranchiseInfos .hero-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 0.8s ease 0.3s forwards;
+  opacity: 0;
+}
+
+#FranchiseInfos.visible .hero-image {
+  opacity: 1;
+}
+
+#FranchiseInfos .image-container {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--link-hover-color) 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+#FranchiseInfos .businessman-silhouette {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 350px;
+}
+
+#FranchiseInfos .suit-body {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 300px;
+  background: #2c3e50;
+  border-radius: 20px 20px 0 0;
+}
+
+#FranchiseInfos .tie {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 80px;
+  background: #e74c3c;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+#FranchiseInfos .collar {
+  position: absolute;
+  bottom: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 40px;
+  background: var(--secondary-color);
+  border-radius: 50px 50px 0 0;
+}
+
+#FranchiseInfos .cleaning-tools {
+  position: absolute;
+  top: 50px;
+  right: -20px;
+}
+
+#FranchiseInfos .tool {
+  position: absolute;
+  background: var(--secondary-color);
+  border-radius: 4px;
+  animation: float 3s ease-in-out infinite;
+}
+
+#FranchiseInfos .tool-1 {
+  width: 8px;
+  height: 40px;
+  top: 0;
+  right: 0;
+  animation-delay: 0s;
+}
+
+#FranchiseInfos .tool-2 {
+  width: 12px;
+  height: 12px;
+  top: 50px;
+  right: 20px;
+  border-radius: 50%;
+  animation-delay: 1s;
+}
+
+#FranchiseInfos .tool-3 {
+  width: 6px;
+  height: 30px;
+  top: 80px;
+  right: 10px;
+  animation-delay: 2s;
+}
+
+#FranchiseInfos .floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#FranchiseInfos .floating-element {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatAround 4s ease-in-out infinite;
+}
+
+#FranchiseInfos .element-1 {
+  width: 40px;
+  height: 40px;
+  top: 20%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+#FranchiseInfos .element-2 {
+  width: 35px;
+  height: 35px;
+  top: 60%;
+  left: 5%;
+  animation-delay: 1.5s;
+}
+
+#FranchiseInfos .element-3 {
+  width: 45px;
+  height: 45px;
+  top: 35%;
+  left: 15%;
+  animation-delay: 3s;
+}
+
+#FranchiseInfos .star-icon,
+#FranchiseInfos .award-icon,
+#FranchiseInfos .trend-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--primary-color);
+}
+
+/* Content Tabs */
+#FranchiseInfos .franchise-content {
+  margin-bottom: 80px;
+}
+
+#FranchiseInfos .content-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 48px;
+  background: rgba(62, 137, 135, 0.1);
+  padding: 8px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#FranchiseInfos .tab-button {
+  flex: 1;
+  padding: 16px 24px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+#FranchiseInfos .tab-button.active {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  box-shadow: var(--shadow-light);
+}
+
+#FranchiseInfos .tab-button:hover:not(.active) {
+  background: rgba(62, 137, 135, 0.15);
+}
+
+/* Cards Grid */
+#FranchiseInfos .contracts-grid,
+#FranchiseInfos .advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#FranchiseInfos .contract-card,
+#FranchiseInfos .advantage-card {
+  background: var(--secondary-color);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  transition: var(--transition-smooth);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+  border: 2px solid transparent;
+}
+
+#FranchiseInfos .contract-card:hover,
+#FranchiseInfos .advantage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--primary-color);
+}
+
+#FranchiseInfos .card-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 24px;
+  background: linear-gradient(135deg, var(--primary-color), var(--link-hover-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+#FranchiseInfos .card-icon .icon {
+  width: 28px;
+  height: 28px;
+  color: var(--secondary-color);
+}
+
+#FranchiseInfos .contract-card:hover .card-icon,
+#FranchiseInfos .advantage-card:hover .card-icon {
+  animation: pulse 0.6s ease;
+}
+
+#FranchiseInfos .card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+#FranchiseInfos .card-description {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Cleaning Scene */
+#FranchiseInfos .cleaning-scene {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--link-hover-color) 100%);
+  border-radius: 24px;
+  padding: 60px 0;
+  margin-top: 80px;
+  overflow: hidden;
+  position: relative;
+}
+
+#FranchiseInfos .scene-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+#FranchiseInfos .scene-text {
+  padding-left: 60px;
+  color: var(--secondary-color);
+}
+
+#FranchiseInfos .scene-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+#FranchiseInfos .scene-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  opacity: 0.9;
+}
+
+#FranchiseInfos .quality-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+#FranchiseInfos .quality-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#FranchiseInfos .quality-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--secondary-color);
+}
+
+#FranchiseInfos .quality-item span {
+  font-weight: 500;
+}
+
+#FranchiseInfos .scene-image {
+  position: relative;
+  height: 400px;
+  padding-right: 60px;
+}
+
+#FranchiseInfos .cleaning-team {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#FranchiseInfos .cleaner {
+  position: absolute;
+  width: 80px;
+  height: 120px;
+}
+
+#FranchiseInfos .cleaner-1 {
+  top: 20%;
+  left: 10%;
+  animation: cleaningMotion 4s ease-in-out infinite;
+}
+
+#FranchiseInfos .cleaner-2 {
+  top: 40%;
+  right: 20%;
+  animation: cleaningMotion 4s ease-in-out infinite 1.5s;
+}
+
+#FranchiseInfos .cleaner-3 {
+  bottom: 10%;
+  left: 40%;
+  animation: cleaningMotion 4s ease-in-out infinite 3s;
+}
+
+#FranchiseInfos .person-body {
+  width: 60px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 30px 30px 10px 10px;
+  position: relative;
+  margin: 0 auto;
+}
+
+#FranchiseInfos .person-body::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+}
+
+#FranchiseInfos .cleaning-equipment {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#FranchiseInfos .vacuum {
+  width: 20px;
+  height: 40px;
+  background: #34495e;
+  border-radius: 4px;
+}
+
+#FranchiseInfos .spray {
+  width: 15px;
+  height: 25px;
+  background: #2ecc71;
+  border-radius: 2px;
+}
+
+#FranchiseInfos .cloth {
+  width: 25px;
+  height: 15px;
+  background: #f39c12;
+  border-radius: 8px;
+}
+
+#FranchiseInfos .cleaning-bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#FranchiseInfos .bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: bubbleFloat 3s ease-in-out infinite;
+}
+
+#FranchiseInfos .bubble-1 {
+  width: 12px;
+  height: 12px;
+  top: 30%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+#FranchiseInfos .bubble-2 {
+  width: 8px;
+  height: 8px;
+  top: 60%;
+  right: 30%;
+  animation-delay: 1s;
+}
+
+#FranchiseInfos .bubble-3 {
+  width: 15px;
+  height: 15px;
+  bottom: 20%;
+  left: 60%;
+  animation-delay: 2s;
+}
+
+#FranchiseInfos .bubble-4 {
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 80%;
+  animation-delay: 0.5s;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatAround {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(90deg); }
+  50% { transform: translateY(-5px) rotate(180deg); }
+  75% { transform: translateY(-15px) rotate(270deg); }
+}
+
+@keyframes cleaningMotion {
+  0%, 100% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-5px) scale(1.05); }
+  50% { transform: translateY(0) scale(1); }
+  75% { transform: translateY(-3px) scale(1.02); }
+}
+
+@keyframes bubbleFloat {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-20px) scale(1.2); opacity: 0.8; }
+  100% { transform: translateY(-40px) scale(0.8); opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  #FranchiseInfos .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  #FranchiseInfos .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  #FranchiseInfos .scene-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  #FranchiseInfos .scene-text {
+    padding-left: 0;
+  }
+  
+  #FranchiseInfos .scene-image {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #FranchiseInfos {
+    padding: 60px 0;
+  }
+  
+  #FranchiseInfos .hero-title {
+    font-size: 2.4rem;
+  }
+  
+  #FranchiseInfos .hero-features {
+    grid-template-columns: 1fr;
+  }
+  
+  #FranchiseInfos .contact-info {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  #FranchiseInfos .content-tabs {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  #FranchiseInfos .contracts-grid,
+  #FranchiseInfos .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  #FranchiseInfos .image-container {
+    width: 300px;
+    height: 400px;
+  }
+  
+  #FranchiseInfos .scene-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #FranchiseInfos .hero-title {
+    font-size: 2rem;
+  }
+  
+  #FranchiseInfos .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  #FranchiseInfos .image-container {
+    width: 250px;
+    height: 350px;
+  }
+  
+  #FranchiseInfos .contract-card,
+  #FranchiseInfos .advantage-card {
+    padding: 24px;
+  }
+  
+  #FranchiseInfos .scene-title {
+    font-size: 1.8rem;
+  }
+  
+  #FranchiseInfos .scene-description {
+    font-size: 1rem;
+  }
+}
+
+/* Très petits écrans (montres connectées) */
+@media (max-width: 320px) {
+  #FranchiseInfos {
+    padding: 40px 0;
+  }
+  
+  #FranchiseInfos .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  #FranchiseInfos .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  #FranchiseInfos .feature-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  
+  #FranchiseInfos .image-container {
+    width: 200px;
+    height: 280px;
+  }
+  
+  #FranchiseInfos .businessman-silhouette {
+    width: 150px;
+    height: 250px;
+  }
+  
+  #FranchiseInfos .suit-body {
+    width: 130px;
+    height: 200px;
+  }
+  
+  #FranchiseInfos .contract-card,
+  #FranchiseInfos .advantage-card {
+    padding: 20px;
+  }
+  
+  #FranchiseInfos .card-title {
+    font-size: 1.1rem;
+  }
+  
+  #FranchiseInfos .card-description {
+    font-size: 0.9rem;
+  }
+  
+  #FranchiseInfos .scene-title {
+    font-size: 1.6rem;
+  }
+  
+  #FranchiseInfos .tab-button {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Optimisations pour la performance */
+#FranchiseInfos * {
+  will-change: auto;
+}
+
+#FranchiseInfos .floating-element,
+#FranchiseInfos .cleaner,
+#FranchiseInfos .bubble {
+  will-change: transform;
+}
+
+/* Focus states pour l'accessibilité */
+#FranchiseInfos .btn:focus,
+#FranchiseInfos .tab-button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+#FranchiseInfos .btn:focus-visible,
+#FranchiseInfos .tab-button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Préchargement des animations pour éviter les FOUC */
+#FranchiseInfos .hero-text,
+#FranchiseInfos .hero-image {
+  opacity: 0;
+}
+
+#FranchiseInfos.visible .hero-text,
+#FranchiseInfos.visible .hero-image {
+  opacity: 1;
+}

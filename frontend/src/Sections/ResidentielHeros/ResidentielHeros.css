@@ -1,0 +1,424 @@
+@import '../../styles/theme.css';
+
+#ResidentielHeros {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 150px 5% 50px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--link-hover-color) 100%);
+}
+
+#ResidentielHeros .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--link-hover-color) 100%);
+  z-index: 1;
+}
+
+#ResidentielHeros .hero-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  animation: float 20s ease-in-out infinite;
+}
+
+#ResidentielHeros .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(62, 137, 135, 0.1);
+  z-index: 2;
+}
+
+#ResidentielHeros .container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+#ResidentielHeros .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  min-height: 80vh;
+}
+
+#ResidentielHeros .hero-text {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInLeft 1s ease-out 0.3s forwards;
+}
+
+#ResidentielHeros .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  padding: 8px 16px;
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.5s forwards;
+}
+
+#ResidentielHeros .hero-badge .badge-icon {
+  width: 16px;
+  height: 16px;
+  color: #ffd700;
+}
+
+#ResidentielHeros .hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--secondary-color);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.7s forwards;
+}
+
+#ResidentielHeros .title-highlight {
+  display: block;
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 8px;
+}
+
+#ResidentielHeros .hero-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 32px;
+  max-width: 90%;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.9s forwards;
+}
+
+#ResidentielHeros .hero-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+#ResidentielHeros .feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--secondary-color);
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+#ResidentielHeros .feature-item .feature-icon {
+  width: 20px;
+  height: 20px;
+  color: #ffd700;
+  flex-shrink: 0;
+}
+
+#ResidentielHeros .hero-actions {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.1s forwards;
+}
+
+#ResidentielHeros .hero-cta {
+  background: #ffd700;
+  color: var(--text-dark);
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+#ResidentielHeros .hero-cta:hover {
+  background: #ffed4e;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+}
+
+#ResidentielHeros .hero-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--secondary-color);
+  border-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+#ResidentielHeros .hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+#ResidentielHeros .hero-trust {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.3s forwards;
+}
+
+#ResidentielHeros .trust-stats {
+  display: flex;
+  gap: 32px;
+}
+
+#ResidentielHeros .stat-item {
+  text-align: center;
+}
+
+#ResidentielHeros .stat-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffd700;
+  line-height: 1;
+}
+
+#ResidentielHeros .stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* Section visuelle */
+#ResidentielHeros .hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-out 0.8s forwards;
+}
+
+#ResidentielHeros .visual-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+#ResidentielHeros .main-visual {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+#ResidentielHeros .main-visual .main-icon {
+  width: 48px;
+  height: 48px;
+  color: #ffd700;
+}
+
+#ResidentielHeros .main-visual .visual-text {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+#ResidentielHeros .floating-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--secondary-color);
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: float 4s ease-in-out infinite;
+}
+
+#ResidentielHeros .floating-card .card-icon {
+  width: 20px;
+  height: 20px;
+  color: #ffd700;
+  flex-shrink: 0;
+}
+
+#ResidentielHeros .card-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+#ResidentielHeros .card-2 {
+  top: 20%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+#ResidentielHeros .card-3 {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #ResidentielHeros .hero-content {
+    gap: 40px;
+  }
+  
+  #ResidentielHeros .visual-container {
+    width: 300px;
+    height: 300px;
+  }
+  
+  #ResidentielHeros .main-visual {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  #ResidentielHeros{
+    padding: 150px 5% 50px;
+  }
+  #ResidentielHeros .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  #ResidentielHeros .hero-description {
+    max-width: 100%;
+  }
+  
+  #ResidentielHeros .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #ResidentielHeros .hero-actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  #ResidentielHeros .trust-stats {
+    justify-content: center;
+  }
+  
+  #ResidentielHeros .visual-container {
+    width: 250px;
+    height: 250px;
+  }
+  
+  #ResidentielHeros .floating-card {
+    font-size: 12px;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #ResidentielHeros {
+    padding: 150px 5% 50px;
+  }
+  
+  #ResidentielHeros .hero-features {
+    grid-template-columns: 1fr;
+  }
+  
+  #ResidentielHeros .trust-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  #ResidentielHeros .visual-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  #ResidentielHeros .main-visual {
+    width: 120px;
+    height: 120px;
+  }
+  
+  #ResidentielHeros .floating-card {
+    display: none;
+  }
+}
+
+/* Montres connectées et très petits écrans */
+@media (max-width: 320px) {
+  #ResidentielHeros .hero-title {
+    font-size: 2rem;
+  }
+  
+  #ResidentielHeros .hero-description {
+    font-size: 1rem;
+  }
+  
+  #ResidentielHeros .visual-container {
+    width: 150px;
+    height: 150px;
+  }
+  
+  #ResidentielHeros .main-visual {
+    width: 100px;
+    height: 100px;
+  }
+  
+  #ResidentielHeros .main-visual .main-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Optimisations pour les animations */
+@media (prefers-reduced-motion: reduce) {
+  #ResidentielHeros * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus pour l'accessibilité */
+#ResidentielHeros .btn:focus {
+  outline: 3px solid #ffd700;
+  outline-offset: 2px;
+}

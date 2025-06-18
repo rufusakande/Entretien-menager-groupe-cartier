@@ -1,0 +1,443 @@
+@import '../../styles/theme.css';
+
+/* Section principale */
+#GrandMenageInfos {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f8fffe 0%, #ffffff 50%, #f0fffe 100%);
+  position: relative;
+}
+
+#GrandMenageInfos::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+/* En-tête de section */
+#GrandMenageInfos .section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#GrandMenageInfos .header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-light);
+}
+
+#GrandMenageInfos .section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+#GrandMenageInfos .section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grille des services */
+#GrandMenageInfos .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Cartes de service */
+#GrandMenageInfos .service-card {
+  background: var(--secondary-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  border: 1px solid rgba(62, 137, 135, 0.1);
+}
+
+#GrandMenageInfos .service-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#GrandMenageInfos .service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Partie visuelle des cartes */
+#GrandMenageInfos .card-visual {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+#GrandMenageInfos .service-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Images de fond pour chaque service */
+#GrandMenageInfos .service-image.cleaning-supplies {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--link-hover-color) 100%);
+}
+
+#GrandMenageInfos .service-image.renovation {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#GrandMenageInfos .service-image.moving {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+#GrandMenageInfos .service-image.carpet {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+#GrandMenageInfos .service-image.furniture {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+#GrandMenageInfos .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+#GrandMenageInfos .service-card:hover .image-overlay {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#GrandMenageInfos .service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  color: var(--primary-color);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+#GrandMenageInfos .service-card:hover .service-icon {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Contenu des cartes */
+#GrandMenageInfos .card-content {
+  padding: 2rem;
+}
+
+#GrandMenageInfos .service-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+#GrandMenageInfos .service-description {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Liste des fonctionnalités */
+#GrandMenageInfos .service-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+#GrandMenageInfos .feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+#GrandMenageInfos .feature-item svg {
+  color: var(--primary-color);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Actions des cartes */
+#GrandMenageInfos .card-actions {
+  margin-top: auto;
+}
+
+#GrandMenageInfos .service-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+#GrandMenageInfos .service-btn:hover {
+  gap: 0.75rem;
+}
+
+/* Couleurs variées pour les cartes */
+#GrandMenageInfos .service-card.primary .service-icon {
+  color: var(--primary-color);
+}
+
+#GrandMenageInfos .service-card.secondary .service-icon {
+  color: #667eea;
+}
+
+#GrandMenageInfos .service-card.accent .service-icon {
+  color: #f5576c;
+}
+
+/* Section de confiance */
+#GrandMenageInfos .trust-section {
+  background: var(--secondary-color);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: var(--shadow-light);
+  border: 1px solid rgba(62, 137, 135, 0.1);
+}
+
+#GrandMenageInfos .trust-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+#GrandMenageInfos .trust-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+#GrandMenageInfos .stat-item {
+  text-align: center;
+}
+
+#GrandMenageInfos .stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+#GrandMenageInfos .stat-label {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+#GrandMenageInfos .trust-message h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+#GrandMenageInfos .trust-message p {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Animations d'entrée décalées */
+#GrandMenageInfos .service-card:nth-child(1).animate-in {
+  transition-delay: 0.1s;
+}
+
+#GrandMenageInfos .service-card:nth-child(2).animate-in {
+  transition-delay: 0.2s;
+}
+
+#GrandMenageInfos .service-card:nth-child(3).animate-in {
+  transition-delay: 0.3s;
+}
+
+#GrandMenageInfos .service-card:nth-child(4).animate-in {
+  transition-delay: 0.4s;
+}
+
+#GrandMenageInfos .service-card:nth-child(5).animate-in {
+  transition-delay: 0.5s;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #GrandMenageInfos .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  
+  #GrandMenageInfos .trust-content {
+    gap: 2rem;
+  }
+  
+  #GrandMenageInfos .trust-stats {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #GrandMenageInfos {
+    padding: 3rem 0;
+  }
+  
+  #GrandMenageInfos .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  #GrandMenageInfos .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  #GrandMenageInfos .trust-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  #GrandMenageInfos .trust-section {
+    padding: 2rem;
+  }
+  
+  #GrandMenageInfos .card-visual {
+    height: 160px;
+  }
+  
+  #GrandMenageInfos .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  #GrandMenageInfos .service-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  #GrandMenageInfos .card-content {
+    padding: 1.5rem;
+  }
+  
+  #GrandMenageInfos .trust-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  #GrandMenageInfos .stat-number {
+    font-size: 2rem;
+  }
+  
+  #GrandMenageInfos .service-title {
+    font-size: 1.25rem;
+  }
+  
+  #GrandMenageInfos .service-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Support pour les montres connectées */
+@media (max-width: 320px) {
+  #GrandMenageInfos {
+    padding: 2rem 0;
+  }
+  
+  #GrandMenageInfos .section-title {
+    font-size: 1.5rem;
+  }
+  
+  #GrandMenageInfos .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  #GrandMenageInfos .card-content {
+    padding: 1rem;
+  }
+  
+  #GrandMenageInfos .card-visual {
+    height: 120px;
+  }
+  
+  #GrandMenageInfos .service-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  #GrandMenageInfos .trust-section {
+    padding: 1.5rem;
+  }
+  
+  #GrandMenageInfos .feature-item {
+    font-size: 0.8rem;
+  }
+}
+
+/* Accessibilité - Focus visible */
+#GrandMenageInfos .service-btn:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Réduction de mouvement pour les utilisateurs sensibles */
+@media (prefers-reduced-motion: reduce) {
+  #GrandMenageInfos .service-card,
+  #GrandMenageInfos .service-icon,
+  #GrandMenageInfos .service-btn {
+    transition: none;
+  }
+  
+  #GrandMenageInfos .service-card {
+    transform: none;
+    opacity: 1;
+  }
+  
+  #GrandMenageInfos .service-card:hover {
+    transform: none;
+  }
+}

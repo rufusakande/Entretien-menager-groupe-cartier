@@ -1,0 +1,529 @@
+@import '../../styles/theme.css';
+
+/* Section principale */
+#FranchiseHeros {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 150px 5% 50px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--link-hover-color) 100%);
+}
+
+/* Arrière-plan animé */
+#FranchiseHeros .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#FranchiseHeros .background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(62, 137, 135, 0.1);
+  backdrop-filter: blur(1px);
+}
+
+/* Formes animées */
+#FranchiseHeros .animated-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#FranchiseHeros .shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+#FranchiseHeros .shape-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+#FranchiseHeros .shape-2 {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  left: 5%;
+  animation-delay: 2s;
+}
+
+#FranchiseHeros .shape-3 {
+  width: 100px;
+  height: 100px;
+  top: 60%;
+  right: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Contenu principal */
+#FranchiseHeros .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+#FranchiseHeros .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* Texte du héros */
+#FranchiseHeros .hero-text {
+  color: var(--secondary-color);
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+#FranchiseHeros.visible .hero-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#FranchiseHeros .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#FranchiseHeros .badge-icon {
+  width: 16px;
+  height: 16px;
+}
+
+#FranchiseHeros .hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#FranchiseHeros .title-highlight {
+  display: block;
+  background: linear-gradient(45deg, #ffffff, #e8f5f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+#FranchiseHeros .hero-subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 300;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+#FranchiseHeros .hero-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  opacity: 0.8;
+  max-width: 500px;
+}
+
+/* Statistiques */
+#FranchiseHeros .hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+#FranchiseHeros .stat-item {
+  text-align: center;
+}
+
+#FranchiseHeros .stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#FranchiseHeros .stat-label {
+  font-size: 14px;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+/* Actions du héros */
+#FranchiseHeros .hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#FranchiseHeros .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+#FranchiseHeros .btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+#FranchiseHeros .cta-button {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+#FranchiseHeros .cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+#FranchiseHeros .info-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--secondary-color);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#FranchiseHeros .info-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Partie visuelle */
+#FranchiseHeros .hero-visual {
+  position: relative;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease 0.2s;
+}
+
+#FranchiseHeros.visible .hero-visual {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Carrousel des avantages */
+#FranchiseHeros .advantages-carousel {
+  position: relative;
+  height: 400px;
+  perspective: 1000px;
+}
+
+#FranchiseHeros .advantage-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-align: center;
+  color: var(--secondary-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: rotateY(45deg) translateZ(-100px);
+}
+
+#FranchiseHeros .advantage-card.active {
+  opacity: 1;
+  transform: rotateY(0deg) translateZ(0px);
+}
+
+#FranchiseHeros .advantage-card:not(.active) {
+  pointer-events: none;
+}
+
+#FranchiseHeros .advantage-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+#FranchiseHeros .advantage-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+#FranchiseHeros .advantage-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+#FranchiseHeros .advantage-description {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Indicateurs du carrousel */
+#FranchiseHeros .carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+#FranchiseHeros .indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#FranchiseHeros .indicator.active {
+  background: var(--secondary-color);
+  transform: scale(1.2);
+}
+
+/* Bas du héros */
+#FranchiseHeros .hero-bottom {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  animation: fadeInUp 1s ease 1.5s forwards;
+}
+
+#FranchiseHeros .contact-info {
+  display: flex;
+  gap: 32px;
+  color: var(--secondary-color);
+}
+
+#FranchiseHeros .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+#FranchiseHeros .contact-icon {
+  width: 16px;
+  height: 16px;
+}
+
+#FranchiseHeros .scroll-indicator {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: bounce 2s infinite;
+}
+
+#FranchiseHeros .scroll-indicator:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+#FranchiseHeros .scroll-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--secondary-color);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #FranchiseHeros .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  #FranchiseHeros .hero-stats {
+    justify-content: center;
+  }
+  
+  #FranchiseHeros .advantages-carousel {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  #FranchiseHeros .hero-actions {
+    justify-content: center;
+  }
+  
+  #FranchiseHeros .hero-stats {
+    gap: 24px;
+  }
+  
+  #FranchiseHeros .stat-number {
+    font-size: 2rem;
+  }
+  
+  #FranchiseHeros .contact-info {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  #FranchiseHeros .advantages-carousel {
+    height: 300px;
+  }
+  
+  #FranchiseHeros .advantage-card {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  #FranchiseHeros .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #FranchiseHeros .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  
+  #FranchiseHeros .hero-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  #FranchiseHeros .advantages-carousel {
+    height: 280px;
+  }
+  
+  #FranchiseHeros .advantage-card {
+    padding: 24px 20px;
+  }
+  
+  #FranchiseHeros .advantage-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  #FranchiseHeros .advantage-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  #FranchiseHeros .hero-bottom {
+    position: relative;
+    margin-top: 32px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+  }
+}
+
+/* Support pour les très petits écrans (montres connectées) */
+@media (max-width: 320px) {
+  #FranchiseHeros {
+    padding: 150px 5% 50px;
+    min-height: auto;
+  }
+  
+  #FranchiseHeros .hero-content {
+    gap: 24px;
+    min-height: auto;
+  }
+  
+  #FranchiseHeros .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  #FranchiseHeros .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  #FranchiseHeros .hero-description {
+    font-size: 14px;
+  }
+  
+  #FranchiseHeros .advantages-carousel {
+    height: 200px;
+  }
+  
+  #FranchiseHeros .advantage-card {
+    padding: 16px;
+  }
+  
+  #FranchiseHeros .advantage-title {
+    font-size: 18px;
+  }
+  
+  #FranchiseHeros .advantage-description {
+    font-size: 14px;
+  }
+  
+  #FranchiseHeros .hero-bottom {
+    position: relative;
+    margin-top: 32px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+  }
+}

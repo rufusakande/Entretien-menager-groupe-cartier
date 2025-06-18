@@ -1,0 +1,553 @@
+@import url('../../styles/theme.css');
+
+#NettoyageCommercialHeros {
+  min-height: 100vh;
+  background: linear-gradient(135deg, 
+    var(--primary-color) 0%, 
+    var(--link-hover-color) 50%, 
+    var(--primary-color) 100%
+  );
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 150px 5% 80px;
+}
+
+#NettoyageCommercialHeros .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(62, 137, 135, 0.1);
+  backdrop-filter: blur(0.5px);
+}
+
+#NettoyageCommercialHeros .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+#NettoyageCommercialHeros .hero-text {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+#NettoyageCommercialHeros.visible .hero-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#NettoyageCommercialHeros .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 25px;
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#NettoyageCommercialHeros .hero-badge .badge-icon {
+  width: 16px;
+  height: 16px;
+  color: #ffd700;
+}
+
+#NettoyageCommercialHeros .hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--secondary-color);
+  margin-bottom: 24px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#NettoyageCommercialHeros .hero-title .highlight {
+  color: #ffd700;
+  position: relative;
+}
+
+#NettoyageCommercialHeros .hero-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+  border-radius: 2px;
+}
+
+#NettoyageCommercialHeros .hero-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+#NettoyageCommercialHeros .services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+#NettoyageCommercialHeros .service-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+#NettoyageCommercialHeros .service-item .check-icon {
+  width: 20px;
+  height: 20px;
+  color: #4ade80;
+  flex-shrink: 0;
+}
+
+#NettoyageCommercialHeros .hero-actions {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+#NettoyageCommercialHeros .cta-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffd700;
+  color: var(--text-dark);
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#NettoyageCommercialHeros .cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+#NettoyageCommercialHeros .cta-button:hover::before {
+  left: 100%;
+}
+
+#NettoyageCommercialHeros .cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
+#NettoyageCommercialHeros .cta-button .btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+#NettoyageCommercialHeros .cta-button .arrow-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+#NettoyageCommercialHeros .cta-button:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+#NettoyageCommercialHeros .contact-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--secondary-color);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#NettoyageCommercialHeros .contact-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+#NettoyageCommercialHeros .contact-button .btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+#NettoyageCommercialHeros .hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#NettoyageCommercialHeros .info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+#NettoyageCommercialHeros .info-item .info-icon {
+  width: 16px;
+  height: 16px;
+  color: #4ade80;
+}
+
+#NettoyageCommercialHeros .hero-visual {
+  position: relative;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease 0.3s;
+}
+
+#NettoyageCommercialHeros.visible .hero-visual {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#NettoyageCommercialHeros .cleaning-illustration {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#NettoyageCommercialHeros .cleaning-person {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+#NettoyageCommercialHeros .person-body {
+  width: 80px;
+  height: 120px;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  border-radius: 40px 40px 20px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: cleaningMotion 3s ease-in-out infinite;
+}
+
+#NettoyageCommercialHeros .cleaning-equipment {
+  width: 30px;
+  height: 60px;
+  background: linear-gradient(135deg, #ffd700, #f59e0b);
+  border-radius: 15px;
+  position: absolute;
+  top: 40%;
+  right: 20px;
+  animation: cleaningMotion 3s ease-in-out infinite 0.2s;
+}
+
+#NettoyageCommercialHeros .cleaning-bucket {
+  width: 40px;
+  height: 30px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  animation: cleaningMotion 3s ease-in-out infinite 0.4s;
+}
+
+#NettoyageCommercialHeros .sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+#NettoyageCommercialHeros .sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffd700;
+  border-radius: 50%;
+  animation: sparkleAnimation 2s ease-in-out infinite;
+}
+
+#NettoyageCommercialHeros .sparkle-1 {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+#NettoyageCommercialHeros .sparkle-2 {
+  top: 30%;
+  right: 15%;
+  animation-delay: 0.5s;
+}
+
+#NettoyageCommercialHeros .sparkle-3 {
+  bottom: 25%;
+  left: 25%;
+  animation-delay: 1s;
+}
+
+#NettoyageCommercialHeros .sparkle-4 {
+  bottom: 35%;
+  right: 30%;
+  animation-delay: 1.5s;
+}
+
+#NettoyageCommercialHeros .stats-cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+#NettoyageCommercialHeros .stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  color: var(--secondary-color);
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+#NettoyageCommercialHeros .stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+#NettoyageCommercialHeros .stat-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffd700;
+  margin-bottom: 8px;
+}
+
+#NettoyageCommercialHeros .stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+#NettoyageCommercialHeros .hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  z-index: 1;
+}
+
+#NettoyageCommercialHeros .hero-wave svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes cleaningMotion {
+  0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+  25% { transform: translate(-45%, -55%) rotate(2deg); }
+  50% { transform: translate(-50%, -50%) rotate(0deg); }
+  75% { transform: translate(-55%, -45%) rotate(-2deg); }
+}
+
+@keyframes sparkleAnimation {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #NettoyageCommercialHeros {
+    padding: 150px 5% 50px;
+  }
+  
+  #NettoyageCommercialHeros .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  #NettoyageCommercialHeros .hero-title {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+  
+  #NettoyageCommercialHeros .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  #NettoyageCommercialHeros .cleaning-illustration {
+    width: 300px;
+    height: 300px;
+  }
+  
+  #NettoyageCommercialHeros .stats-cards {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  #NettoyageCommercialHeros .services-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  #NettoyageCommercialHeros {
+    padding: 150px 5% 50px;
+  }
+  
+  #NettoyageCommercialHeros .hero-description {
+    font-size: 16px;
+  }
+  
+  #NettoyageCommercialHeros .cta-button,
+  #NettoyageCommercialHeros .contact-button {
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+  
+  #NettoyageCommercialHeros .cleaning-illustration {
+    width: 250px;
+    height: 250px;
+  }
+  
+  #NettoyageCommercialHeros .stat-card {
+    padding: 15px;
+    min-width: 80px;
+  }
+  
+  #NettoyageCommercialHeros .stat-number {
+    font-size: 20px;
+  }
+  
+  #NettoyageCommercialHeros .stat-label {
+    font-size: 11px;
+  }
+}
+
+/* Montres connectées */
+@media (max-width: 320px) {
+  #NettoyageCommercialHeros {
+    padding: 150px 5% 50px;
+  }
+  
+  #NettoyageCommercialHeros .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  #NettoyageCommercialHeros .hero-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  #NettoyageCommercialHeros .cleaning-illustration {
+    width: 200px;
+    height: 200px;
+  }
+  
+  #NettoyageCommercialHeros .stats-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #NettoyageCommercialHeros .stat-card {
+    width: 100%;
+    max-width: 150px;
+  }
+  
+  #NettoyageCommercialHeros .hero-badge {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  #NettoyageCommercialHeros .service-item {
+    font-size: 14px;
+  }
+  
+  #NettoyageCommercialHeros .service-item .check-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Préférences d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  #NettoyageCommercialHeros .hero-text,
+  #NettoyageCommercialHeros .hero-visual {
+    transition: none;
+  }
+  
+  #NettoyageCommercialHeros .person-body,
+  #NettoyageCommercialHeros .cleaning-equipment,
+  #NettoyageCommercialHeros .cleaning-bucket,
+  #NettoyageCommercialHeros .sparkle {
+    animation: none;
+  }
+  
+  #NettoyageCommercialHeros .cta-button::before {
+    transition: none;
+  }
+}
+
+/* Focus états pour accessibilité */
+#NettoyageCommercialHeros .cta-button:focus,
+#NettoyageCommercialHeros .contact-button:focus {
+  outline: 3px solid #ffd700;
+  outline-offset: 2px;
+}
+
+/* Contraste amélioré */
+@media (prefers-contrast: high) {
+  #NettoyageCommercialHeros .hero-title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  #NettoyageCommercialHeros .hero-description {
+    color: var(--secondary-color);
+  }
+  
+  #NettoyageCommercialHeros .hero-badge {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--secondary-color);
+  }
+}
